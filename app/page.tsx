@@ -17,7 +17,7 @@ export default function SignIn() {
         <div className="size-9 bg-gradient-to-br from-purple-500 to-pink-500 rounded-xl flex items-center justify-center">
           <Heart className="size-4 text-white fill-black" />
         </div>
-        <p className="font-semibold text-foreground">ExpenseFlow</p>
+        <p className="font-semibold text-foreground">PocketPilot</p>
       </div>
     </div>
   );

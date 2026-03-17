@@ -7,7 +7,7 @@ export default function LogoComponent() {
       </div>
       <div>
         <p className="text-white font-semibold text-lg leading-tight">
-          ExpenseFlow
+          PocketPilot
         </p>
         <p className="text-white/70 text-xs">
           Plan your finances & life moments
