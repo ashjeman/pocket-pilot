@@ -1,4 +1,4 @@
-import { Heart, Plane } from "lucide-react";
+import { Plane } from "lucide-react";
 export default function LogoDarkComponent() {
   return (
     <div className="relative z-10 flex items-center gap-3">
