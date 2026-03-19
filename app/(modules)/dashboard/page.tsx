@@ -35,7 +35,7 @@ export default function DashboardPage() {
             Overview of your financial health — March 2026
           </p>
         </div>
-        <Button size="lg">
+        <Button size="lg" variant="outline">
           <Download />
           Export Report
         </Button>

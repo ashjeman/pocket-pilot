@@ -13,7 +13,7 @@ import {
   SidebarMenuButton,
   SidebarMenuItem,
 } from "@/components/ui/sidebar";
-import { ChevronsUpDown, LogOut } from "lucide-react";
+import { ChevronsUpDown, LogOut, UserRound } from "lucide-react";
 
 export default function ProfileComponent() {
   return (
@@ -61,6 +61,10 @@ export default function ProfileComponent() {
             </DropdownMenuLabel>
             <DropdownMenuSeparator />
             <DropdownMenuGroup>
+              <DropdownMenuItem>
+                <UserRound className="size-4" />
+                Profile
+              </DropdownMenuItem>
               <DropdownMenuItem>
                 <LogOut className="size-4" />
                 Sign out

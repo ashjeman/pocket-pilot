@@ -8,6 +8,7 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table";
+import { CreditCard, TrendingUp } from "lucide-react";
 
 export default function RecentTransactionComponent() {
   return (
@@ -23,12 +24,38 @@ export default function RecentTransactionComponent() {
         <Table className="table-fixed">
           <TableBody>
             <TableRow className="h-15">
-              <TableCell className="w-1/4">INV001</TableCell>
-              <TableCell className="w-1/4">Paid</TableCell>
-              <TableCell className="w-1/4 whitespace-nowrap">
-                Credit Card
+              <TableCell className="w-1/12">
+                <div className="size-11 bg-red-100 backdrop-blur-sm rounded-xl flex items-center justify-center border border-white/30">
+                  <CreditCard className="size-5 text-red-800" />
+                </div>
               </TableCell>
-              <TableCell className="w-1/4 text-right">$250.00</TableCell>
+              <TableCell className="w-7/12">
+                <div>
+                  <p className="text-md font-bold">Grocery store</p>
+                  <p className="text-md text-gray-700">
+                    Food & Dining | Mar 14
+                  </p>
+                </div>
+              </TableCell>
+              <TableCell className="w-4/12 text-right">
+                <p className="font-bold text-md">$85.50</p>
+              </TableCell>
+            </TableRow>
+            <TableRow className="h-15">
+              <TableCell className="w-1/12">
+                <div className="size-11 bg-green-100 backdrop-blur-sm rounded-xl flex items-center justify-center border border-white/30">
+                  <TrendingUp className="size-5 text-green-800" />
+                </div>
+              </TableCell>
+              <TableCell className="w-7/12">
+                <div>
+                  <p className="text-md font-bold">Salary</p>
+                  <p className="text-md text-gray-700">Income | Mar 10</p>
+                </div>
+              </TableCell>
+              <TableCell className="w-4/12 text-right">
+                <p className="font-bold text-md">$4000.00</p>
+              </TableCell>
             </TableRow>
           </TableBody>
         </Table>
