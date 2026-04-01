@@ -1,4 +1,6 @@
+"use client";
 import { Button } from "@/components/ui/button";
+import { Calendar } from "@/components/ui/calendar";
 import { Card } from "@/components/ui/card";
 import {
   Dialog,
@@ -13,14 +15,30 @@ import {
 import { Field, FieldGroup } from "@/components/ui/field";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+import {
+  Popover,
+  PopoverContent,
+  PopoverTrigger,
+} from "@/components/ui/popover";
+import {
+  Select,
+  SelectContent,
+  SelectGroup,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
 import BudgetCategoriesComponent from "@/lib/components/expense-planner/budget-categories-component";
 import BudgetOverviewComponent from "@/lib/components/expense-planner/budget-overview-component";
 import CurrentLoanComponent from "@/lib/components/expense-planner/current-loan-component";
 import FixedMonthlyCommitmentComponent from "@/lib/components/expense-planner/fixed-monthly-commitment-component";
 import RecentExpensesComponent from "@/lib/components/expense-planner/recent-expenses-component";
-import { Download, Plus } from "lucide-react";
+import { CalendarIcon, Download, Plus } from "lucide-react";
+import React from "react";
+import { format } from "date-fns";
 
 export default function ExpenseTrackerPage() {
+  const [date, setDate] = React.useState<Date>();
   return (
     <div className="min-h-screen flex flex-col w-full m-4">
       <div className="hidden lg:flex flex-row justify-between items-center p-8 relative overflow-hidden">
@@ -40,31 +58,81 @@ export default function ExpenseTrackerPage() {
             </DialogTrigger>
             <DialogContent className="sm:max-w-sm">
               <DialogHeader>
-                <DialogTitle>Edit profile</DialogTitle>
+                <DialogTitle>Add Expense</DialogTitle>
                 <DialogDescription>
-                  Make changes to your profile here. Click save when you&apos;re
-                  done.
+                  Add your recent expenses to visualize them.
                 </DialogDescription>
               </DialogHeader>
               <FieldGroup>
                 <Field>
-                  <Label htmlFor="name-1">Name</Label>
-                  <Input id="name-1" name="name" defaultValue="Pedro Duarte" />
+                  <Label htmlFor="name-1">Description</Label>
+                  <Input
+                    id="expenseDesc"
+                    name="expenseDesc"
+                    defaultValue="Groceries"
+                  />
                 </Field>
                 <Field>
-                  <Label htmlFor="username-1">Username</Label>
+                  <Label htmlFor="username-1">Amount</Label>
                   <Input
-                    id="username-1"
-                    name="username"
-                    defaultValue="@peduarte"
+                    id="expAmount"
+                    name="expAmount"
+                    defaultValue="80.00"
+                    type="number"
                   />
+                </Field>
+                <Field>
+                  <Label htmlFor="category-1">Category</Label>
+                  <Select>
+                    <SelectTrigger>
+                      <SelectValue placeholder="Choose category" />
+                    </SelectTrigger>
+                    <SelectContent>
+                      <SelectGroup>
+                        <SelectItem value="engineering">
+                          Food & Dining
+                        </SelectItem>
+                        <SelectItem value="design">Transportaion</SelectItem>
+                        <SelectItem value="marketing">Shopping</SelectItem>
+                        <SelectItem value="sales">Entertainment</SelectItem>
+                        <SelectItem value="support">
+                          Bills & Utilities
+                        </SelectItem>
+                        <SelectItem value="hr">Social Life</SelectItem>
+                        <SelectItem value="finance">Attire & Beauty</SelectItem>
+                        <SelectItem value="operations">Health</SelectItem>
+                      </SelectGroup>
+                    </SelectContent>
+                  </Select>
+                </Field>
+                <Field>
+                  <Label htmlFor="name-1">Transaction date</Label>
+                  <Popover>
+                    <PopoverTrigger asChild>
+                      <Button
+                        variant="outline"
+                        data-empty={!date}
+                        className="w-[280px] justify-start text-left font-normal data-[empty=true]:text-muted-foreground"
+                      >
+                        <CalendarIcon />
+                        {date ? format(date, "PPP") : <span>Pick a date</span>}
+                      </Button>
+                    </PopoverTrigger>
+                    <PopoverContent className="w-auto p-0">
+                      <Calendar
+                        mode="single"
+                        selected={date}
+                        onSelect={setDate}
+                      />
+                    </PopoverContent>
+                  </Popover>
                 </Field>
               </FieldGroup>
               <DialogFooter>
                 <DialogClose asChild>
                   <Button variant="outline">Cancel</Button>
                 </DialogClose>
-                <Button type="submit">Save changes</Button>
+                <Button type="submit">Save</Button>
               </DialogFooter>
             </DialogContent>
           </form>
