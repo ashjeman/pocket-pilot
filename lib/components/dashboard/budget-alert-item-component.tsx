@@ -1,5 +1,4 @@
-import { CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Card } from "../ui/card";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { CircleAlert } from "lucide-react";
 
 export default function BudgetAlertItemComponent() {
