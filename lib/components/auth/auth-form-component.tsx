@@ -3,11 +3,11 @@ import { FormEvent, useState } from "react";
 import { Eye, EyeOff, Mail, Lock, User, ArrowRight } from "lucide-react";
 import MobileLogoComponent from "../common/mobile-logo-component";
 import { cn } from "@/lib/utils";
-import { Button } from "@/lib/components/ui/button";
-import { Separator } from "@/lib/components/ui/separator";
-import { Input } from "@/lib/components/ui/input";
-import { Label } from "@/lib/components/ui/label";
 import { supabase } from "@/app/supabase-client";
+import { Separator } from "@/components/ui/separator";
+import { Label } from "@/components/ui/label";
+import { Input } from "@/components/ui/input";
+import { Button } from "@/components/ui/button";
 
 type Mode = "signin" | "signup";
 

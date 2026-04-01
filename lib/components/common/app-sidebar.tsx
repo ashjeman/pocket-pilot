@@ -21,7 +21,6 @@ import {
   TrendingUp,
   Wallet,
 } from "lucide-react";
-import { Separator } from "../ui/separator";
 import { Card } from "@/components/ui/card";
 import {
   DropdownMenu,
@@ -35,6 +34,7 @@ import {
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import SidebarWidgetComponent from "../sidebar/sidebar-widget-component";
 import ProfileComponent from "../sidebar/profile-component";
+import { Separator } from "@/components/ui/separator";
 
 const navItems = [
   {

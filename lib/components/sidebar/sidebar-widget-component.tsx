@@ -1,5 +1,5 @@
+import { Card } from "@/components/ui/card";
 import { TrendingUp } from "lucide-react";
-import { Card } from "../ui/card";
 
 export default function SidebarWidgetComponent() {
   return (
