@@ -1,17 +1,28 @@
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Progress } from "@/components/ui/progress";
-import { Tag } from "lucide-react";
+import { BudgetCategoriesProps } from "@/lib/types";
+import * as Icons from "lucide-react";
 
-export default function BudgetCategoriesComponent() {
+export default function BudgetCategoriesComponent({
+  category,
+  icon,
+  color,
+}: BudgetCategoriesProps) {
+  const Icon =
+    (Icons[icon as keyof typeof Icons] as React.ElementType) ??
+    Icons.CircleDashed;
+
   return (
     <Card className="overflow-hidden w-full">
       <div className="w-full h-full flex flex-col ">
         <CardHeader className="w-full pb-4">
-          <div className="flex flex-row justify-between">
-            <CardTitle>Food and Dining</CardTitle>
-            <div className="size-10 bg-purple-50 rounded-lg flex items-center justify-center">
-              <Tag className="text-purple-700 w-5 h-5" />
+          <div className="flex flex-row justify-between items-center">
+            <CardTitle>{category}</CardTitle>
+            <div
+              className={`size-8 ${color} rounded-lg flex items-center justify-center`}
+            >
+              <Icon className="w-4 h-4" />
             </div>
           </div>
         </CardHeader>
