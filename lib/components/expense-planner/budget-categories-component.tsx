@@ -1,7 +1,7 @@
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Progress } from "@/components/ui/progress";
-import { BudgetCategoriesProps } from "@/lib/types";
+import { BudgetCategoriesProps } from "@/types";
 import * as Icons from "lucide-react";
 
 export default function BudgetCategoriesComponent({

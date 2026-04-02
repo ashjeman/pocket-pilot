@@ -29,7 +29,7 @@ import { CalendarIcon, Plus } from "lucide-react";
 import { format } from "date-fns";
 import { useState } from "react";
 import { supabase } from "@/app/supabase-client";
-import { ExpenseCategory } from "@/lib/types";
+import { ExpenseCategory } from "@/types";
 
 export default function AddExpenseComponent() {
   const [open, setOpen] = useState(false);

@@ -5,7 +5,7 @@ import BudgetOverviewComponent from "@/lib/components/expense-planner/budget-ove
 import CurrentLoanComponent from "@/lib/components/expense-planner/current-loan-component";
 import FixedMonthlyCommitmentComponent from "@/lib/components/expense-planner/fixed-monthly-commitment-component";
 import RecentExpensesComponent from "@/lib/components/expense-planner/recent-expenses-component";
-import { ExpenseCategory, ExpenseCategoryConfig } from "@/lib/types";
+import { ExpenseCategory, ExpenseCategoryConfig } from "@/types";
 
 export default function ExpenseTrackerPage() {
   return (

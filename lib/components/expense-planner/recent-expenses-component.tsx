@@ -31,7 +31,7 @@ import {
   TrendingUp,
 } from "lucide-react";
 import { useEffect, useState } from "react";
-import { Expense } from "@/lib/types";
+import { Expense } from "@/types";
 
 export default function RecentExpensesComponent() {
   const [recentExpense, setRecentExpenses] = useState<Expense[]>([]);
